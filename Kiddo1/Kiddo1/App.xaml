@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication
+    x:Class="Kiddo1.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <OnPlatform x:Key="FontAwesomeBrands" x:TypeArguments="x:String">
+                <On Platform="Android" Value="FontAwesome5BrandsRegular.otf#Brands Regular" />
+                <On Platform="iOS" Value="FontAwesome5BrandsRegular-Regular" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="FontAwesomeSolid" x:TypeArguments="x:String">
+                <On Platform="Android" Value="FontAwesome5FreeSolid.otf#Regular" />
+                <On Platform="iOS" Value="FontAwesome5FreeSolid-Solid" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="FontAwesomeRegular" x:TypeArguments="x:String">
+                <On Platform="Android" Value="FontAwesome5FreeRegular.otf#Regular" />
+                <On Platform="iOS" Value="FontAwesome5FreeRegular-Regular" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>

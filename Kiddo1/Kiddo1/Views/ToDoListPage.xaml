@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Kiddo1.Views.ToDoListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Kiddo1.Views;assembly=Kiddo1"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False">
+
+
+    <RelativeLayout>
+
+        <StackLayout Spacing="0">
+
+            <!--#region MainBar-->
+            <Frame
+                Padding="10,0"
+                BackgroundColor="#FFE6FF"
+                HasShadow="True">
+                <StackLayout Orientation="Horizontal">
+                    <Button
+                        Margin="0"
+                        Padding="0"
+                        BackgroundColor="Transparent"
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        HorizontalOptions="Start"
+                        Text="&#x2630;"
+                        TextColor="#243b6b"
+                        WidthRequest="20" />
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="To-Do"
+                        TextColor="#243b6b"
+                        VerticalOptions="Center" />
+                    <Button
+                        Margin="0"
+                        Padding="0"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Start"
+                        Text="&#x1F50D;"
+                        WidthRequest="20" />
+                </StackLayout>
+            </Frame>
+            <!--#endregion-->
+
+            <!--#region CurrentBlock-->
+            <Frame BackgroundColor="#FFeeFF" HeightRequest="150">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    Text="Today's list"
+                    TextColor="#243b6b"
+                    VerticalOptions="Center" />
+            </Frame>
+            <!--#endregion-->
+
+            <!--#region ToDo's-->
+            <ListView
+                Margin="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+            <!--#endregion-->
+
+            <!--#region BottomBar-->
+            <AbsoluteLayout>
+                <Grid
+                    AbsoluteLayout.LayoutBounds="0,1,1,0.5"
+                    AbsoluteLayout.LayoutFlags="All"
+                    BackgroundColor="#FFeeFF"
+                    HeightRequest="100"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Button
+                        Grid.Column="0"
+                        BackgroundColor="Transparent"
+                        FontFamily="{StaticResource FontAwesomeSolid}"
+                        Text="&#xf03a;"
+                        TextColor="#243b6b" />
+                    <Button
+                        Grid.Column="1"
+                        BackgroundColor="Transparent"
+                        Command="{Binding Path=NavigateCommand}"
+                        CommandParameter="SchedulerPage"
+                        FontFamily="{StaticResource FontAwesomeRegular}"
+                        Text="&#xf017;"
+                        TextColor="#243b6b" />
+                    <Button
+                        Grid.Column="2"
+                        BackgroundColor="Transparent"
+                        Command="{Binding Path=NavigateCommand}"
+                        CommandParameter="NotificationsPage"
+                        FontFamily="{StaticResource FontAwesomeRegular}"
+                        Text="&#xf0f3;"
+                        TextColor="#243b6b" />
+                    <Button
+                        Grid.Column="3"
+                        BackgroundColor="Transparent"
+                        Command="{Binding Path=NavigateCommand}"
+                        CommandParameter="ProfilePage"
+                        FontFamily="{StaticResource FontAwesomeRegular}"
+                        Text="&#xf007;"
+                        TextColor="#243b6b" />
+                </Grid>
+
+                <yummy:PancakeView
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,50,50"
+                    AbsoluteLayout.LayoutFlags="XProportional,YProportional"
+                    BackgroundColor="#243b6b"
+                    CornerRadius="60"
+                    HasShadow="True"
+                    HorizontalOptions="FillAndExpand"
+                    IsClippedToBounds="true">
+                    <Button
+                        Margin="0"
+                        Padding="0"
+                        BackgroundColor="Transparent"
+                        Command="{Binding Path=NavigateCommand}"
+                        CommandParameter="NewTaskPage"
+                        FontFamily="{StaticResource FontAwesomeSolid}"
+                        Text="&#xf067;"
+                        TextColor="White" />
+
+                </yummy:PancakeView>
+            </AbsoluteLayout>
+            <!--#endregion-->
+
+        </StackLayout>
+
+        <!--#region Drawer-->
+        <Frame
+            x:Name="bottomSheet"
+            Padding="1,4,1,0"
+            CornerRadius="8"
+            HasShadow="true"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                   Property=Height,
+                                                                   Factor=1,
+                                                                   Constant=1}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Property=Width,
+                                                                  Factor=0.7,
+                                                                  Constant=0}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                              Property=Width,
+                                                              Factor=1,
+                                                              Constant=0}"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                              Property=Height,
+                                                              Factor=0,
+                                                              Constant=0}">
+            
+            <StackLayout Spacing="5">
+                <BoxView
+                    BackgroundColor="Gray"
+                    CornerRadius="2"
+                    HeightRequest="5"
+                    HorizontalOptions="Center"
+                    WidthRequest="50" />
+
+            </StackLayout>
+        </Frame>
+        <!--#endregion-->
+
+    </RelativeLayout>
+
+</ContentPage>
+
