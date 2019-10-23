@@ -1,4 +1,9 @@
-﻿using Foundation;
+﻿using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
+using Foundation;
+using Kiddo1.iOS.Persistance;
+using Kiddo1.Persistance;
+using Lottie.Forms.iOS.Renderers;
 using Prism;
 using Prism.Ioc;
 using UIKit;
@@ -21,8 +26,12 @@ namespace Kiddo1.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            new Syncfusion.SfNavigationDrawer.XForms.iOS.SfNavigationDrawerRenderer();
+            SvgCachedImage.Init();
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new iOSInitializer()));
+            AnimationViewRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }
@@ -32,6 +41,7 @@ namespace Kiddo1.iOS
     {
         public void RegisterTypes(IContainerRegistry container)
         {
+            container.RegisterSingleton<ISQLiteDb, SQLiteDb>();
 
         }
     }

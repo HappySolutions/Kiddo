@@ -1,20 +1,82 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage 
-	xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:prism="http://prismlibrary.com"
-    prism:ViewModelLocator.AutowireViewModel="True"
-	xmlns:local="clr-namespace:Kiddo1.Views;assembly=Kiddo1"
+<ContentPage
     x:Class="Kiddo1.Views.ProfilePage"
-    Title="Profile">
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:local="clr-namespace:Kiddo1.Views;assembly=Kiddo1"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    Title="Profile"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    FlowDirection="RightToLeft"
+    NavigationPage.HasNavigationBar="False">
 
 
 
-	  <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-          <Label Text="ProfilePage" VerticalOptions="Center" HorizontalOptions="Center" />
-		          <Button Text="Edit Profile" Command="{Binding Path=NavigateCommand}" CommandParameter="EditProfilePage" />
-	  </StackLayout>
-    
+    <StackLayout BackgroundColor="White" Spacing="0">
+
+        <!--#region MainBar-->
+        <Frame
+            Padding="10,0"
+            BackgroundColor="#FFE6FF"
+            HasShadow="True"
+            HeightRequest="50"
+            VerticalOptions="Start">
+            <StackLayout Orientation="Horizontal">
+                <Label Style="{StaticResource MainHeader}" Text="معلوماتي" />
+            </StackLayout>
+        </Frame>
+        <!--#endregion-->
+
+        <ScrollView Margin="0,0,0,5" VerticalOptions="CenterAndExpand" />
+
+        <!--#region BottomBar-->
+        <AbsoluteLayout BackgroundColor="Red" HeightRequest="50">
+            <Grid
+                AbsoluteLayout.LayoutBounds="0,1,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="#FFeeFF">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <forms:AnimationView
+                    Grid.Column="0"
+                    Animation="checklist.json"
+                    AutoPlay="True"
+                    ClickedCommand="{prism:NavigateTo 'ToDoListPage'}"
+                    Loop="True" />
+
+                <forms:AnimationView
+                    Grid.Column="1"
+                    Animation="stuff.json"
+                    AutoPlay="True"
+                    ClickedCommand="{prism:NavigateTo 'BlockPage'}"
+                    Loop="True" />
+
+                <forms:AnimationView
+                    Grid.Column="2"
+                    Animation="star.json"
+                    AutoPlay="True"
+                    ClickedCommand="{prism:NavigateTo 'ScorePage'}"
+                    Loop="True" />
+
+                <forms:AnimationView
+                    Grid.Column="3"
+                    Animation="girl.json"
+                    AutoPlay="True"
+                    ClickedCommand="{prism:NavigateTo 'ProfilePage'}"
+                    Loop="True" />
+            </Grid>
+        </AbsoluteLayout>
+        <!--#endregion-->
+
+    </StackLayout>
+
+
 
 </ContentPage>
 

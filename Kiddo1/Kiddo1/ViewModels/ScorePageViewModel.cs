@@ -7,11 +7,11 @@ using Kiddo1.Infrastructure;
 
 namespace Kiddo1.ViewModels
 {
-    public class SchedulerPageViewModel : AppMapViewModelBase
+    public class ScorePageViewModel : AppMapViewModelBase
     {
 
 
-        public SchedulerPageViewModel(INavigationService navigationService) : base (navigationService)
+        public ScorePageViewModel(INavigationService navigationService) : base (navigationService)
         {
         }
     }

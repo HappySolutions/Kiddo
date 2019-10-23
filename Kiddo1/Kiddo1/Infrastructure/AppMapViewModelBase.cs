@@ -50,6 +50,7 @@ namespace Kiddo1.Infrastructure {
         /// </summary>
         /// <param name="navigationService">The navigation service.</param>
         /// <exception cref="System.ArgumentNullException">navigationService</exception>
+        /// 
         protected AppMapViewModelBase(INavigationService navigationService)
         {
             if (navigationService == null)

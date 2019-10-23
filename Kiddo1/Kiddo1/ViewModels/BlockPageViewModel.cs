@@ -7,11 +7,11 @@ using Kiddo1.Infrastructure;
 
 namespace Kiddo1.ViewModels
 {
-    public class NotificationsPageViewModel : AppMapViewModelBase
+    public class BlockPageViewModel : AppMapViewModelBase
     {
 
 
-        public NotificationsPageViewModel(INavigationService navigationService) : base (navigationService)
+        public BlockPageViewModel(INavigationService navigationService) : base (navigationService)
         {
         }
     }

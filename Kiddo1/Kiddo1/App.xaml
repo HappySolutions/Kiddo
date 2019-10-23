@@ -7,6 +7,18 @@
     <Application.Resources>
 
         <ResourceDictionary>
+
+            <!--#region Colors-->
+            <Color x:Key="Text">#243b6b</Color>
+            <Color x:Key="done">##93ffdf</Color>
+            <Color x:Key="DPink">##ffe6e6</Color>
+            <Color x:Key="Pink">##ffeeee</Color>
+
+            <Color x:Key="White">#FFFFFF</Color>
+            <Color x:Key="Black">#000000</Color>
+            <!--#endregion-->
+
+            <!--#region font families-->
             <OnPlatform x:Key="FontAwesomeBrands" x:TypeArguments="x:String">
                 <On Platform="Android" Value="FontAwesome5BrandsRegular.otf#Brands Regular" />
                 <On Platform="iOS" Value="FontAwesome5BrandsRegular-Regular" />
@@ -21,6 +33,56 @@
                 <On Platform="Android" Value="FontAwesome5FreeRegular.otf#Regular" />
                 <On Platform="iOS" Value="FontAwesome5FreeRegular-Regular" />
             </OnPlatform>
+            <!--#endregion-->
+
+            <!--#region font sizes-->
+            <x:Double x:Key="Block">24</x:Double>
+            <x:Double x:Key="MainHeadersize">20</x:Double>
+            <x:Double x:Key="MainBody">16</x:Double>
+            <x:Double x:Key="SubMainBody">14</x:Double>
+            <x:Double x:Key="SmallBody">12</x:Double>
+
+            <!--#endregion-->
+            <!--  styles  -->
+
+            <!--#region Labels-->
+
+            <Style x:Key="MainHeader" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource Text}" />
+                <Setter Property="FontSize" Value="{StaticResource MainBody}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="BlockLBL" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource Text}" />
+                <Setter Property="FontSize" Value="{StaticResource Block}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+
+            </Style>
+
+            <Style x:Key="Body" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource Text}" />
+                <Setter Property="FontSize" Value="{StaticResource SmallBody}" />
+            </Style>
+
+            <!--#endregion-->
+
+
+            <!--#region Buttons-->
+
+            <Style x:Key="SMBTN" TargetType="Button">
+                <!--<Setter Property="TextColor" Value="{StaticResource DGrey}" />-->
+                <!--<Setter Property="FontFamily" Value="{StaticResource Second}" />
+                <Setter Property="FontSize" Value="{StaticResource SubMainBody}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource White}" />-->
+            </Style>
+
+
+            <!--#endregion-->
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

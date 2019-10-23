@@ -2,9 +2,9 @@ using Xamarin.Forms;
 
 namespace Kiddo1.Views
 {
-    public partial class SchedulerPage : ContentPage
+    public partial class ScorePage : ContentPage
     {
-        public SchedulerPage()
+        public ScorePage()
         {
             InitializeComponent();
         }

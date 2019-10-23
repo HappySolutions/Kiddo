@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="Kiddo1.Views.ToDoListPage"
+    x:Class="Kiddo1.Views.ScorePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:local="clr-namespace:Kiddo1.Views;assembly=Kiddo1"
     xmlns:prism="http://prismlibrary.com"
-    xmlns:prism1="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    Title="ScorePage"
     prism:ViewModelLocator.AutowireViewModel="True"
     FlowDirection="RightToLeft"
     NavigationPage.HasNavigationBar="False">
+
+
 
     <StackLayout BackgroundColor="White" Spacing="0">
 
@@ -20,42 +23,13 @@
             HasShadow="True"
             HeightRequest="50"
             VerticalOptions="Start">
-            <Label Style="{StaticResource MainHeader}" Text="مهماتي" />
+            <StackLayout Orientation="Horizontal">
+                <Label Style="{StaticResource MainHeader}" Text="رصيدى" />
+            </StackLayout>
         </Frame>
         <!--#endregion-->
 
-        <!--#region CurrentBlock-->
-        <!--<Frame
-            Margin="0,5"
-            BackgroundColor="#FFeeFF"
-            VerticalOptions="Start">
-            <StackLayout>
-                <Label Style="{StaticResource BlockLBL}" Text="قائمة الصباح" />
-
-            </StackLayout>
-        </Frame>-->
-        <!--#endregion-->
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-            <Entry Text="{Binding InputText, Mode=TwoWay}" />
-            <ListView ItemsSource="{Binding TodoItems}" VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.ContextActions>
-                                <MenuItem
-                                    Command="{Binding BindingContext.DeleteCommand, Source={x:Reference Page}}"
-                                    CommandParameter="{Binding}"
-                                    Text="Delete" />
-                            </ViewCell.ContextActions>
-                            <Label Text="{Binding title}" />
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-        <!--#region ToDo's-->
-        <!--<ListView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />-->
-        <!--#endregion-->
+        <ScrollView Margin="0,0,0,5" VerticalOptions="CenterAndExpand" />
 
         <!--#region BottomBar-->
         <AbsoluteLayout BackgroundColor="Red" HeightRequest="50">
@@ -97,26 +71,6 @@
                     ClickedCommand="{prism:NavigateTo 'ProfilePage'}"
                     Loop="True" />
             </Grid>
-            <yummy:PancakeView
-                AbsoluteLayout.LayoutBounds="0.5,-20,40,40"
-                AbsoluteLayout.LayoutFlags="XProportional"
-                BackgroundColor="#243b6b"
-                CornerRadius="60"
-                HasShadow="True"
-                HorizontalOptions="FillAndExpand"
-                IsClippedToBounds="true">
-                <Button
-                    Margin="0"
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    Command="{Binding Path=NavigateCommand}"
-                    CommandParameter="NewTaskPage"
-                    FontFamily="{StaticResource FontAwesomeSolid}"
-                    Text="&#xf067;"
-                    TextColor="White" />
-
-            </yummy:PancakeView>
-
         </AbsoluteLayout>
         <!--#endregion-->
 

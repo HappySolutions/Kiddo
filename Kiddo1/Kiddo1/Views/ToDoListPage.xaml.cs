@@ -9,6 +9,5 @@ namespace Kiddo1.Views
         {
             InitializeComponent();
         }
-
     }
 }
